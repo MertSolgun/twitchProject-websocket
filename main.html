@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitch Project</title>
+    <!-- main css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- flowbite -->
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-20 top-10 left-0 navbar dark:border-gray-600"
+    >
+      <div
+        id="navbar-mobile"
+        class="xl:max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto max-[1500px]:justify-around"
+      >
+        <a href="https://flowbite.com/" class="flex items-center">
+          <img src="twitchlogo.jpg" class="h-8 mr-3" alt="navbar-logo" />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap text-white"
+            >Twitch</span
+          >
+        </a>
+        <div class="flex md:order-2">
+          <div class="buttonmaindiv max-[600px]:flex max-[600px]:gap-10">
+            <button
+              type="button"
+              class="text-white hover:bg-[#f43f5e] ease-in logInbtn duration-300 hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 max-[600px]:m-0 max-[600px]:p-0 max-[600px]:px-1 max-[600px]:mr-0 max-600px:py-0"
+            >
+              Log in
+            </button>
+            <button
+              type="button"
+              class="text-white bg-[#f43f5e] ease-in duration-300 hover:bg-[#fda4af] focus:ring-4 focus:outline-none hover:text-black focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 max-[600px]:m-0 max-[600px]:p-0 max-[600px]:px-1 max-[600px]:mr-0 max-600px:py-0"
+            >
+              Get Started
+            </button>
+          </div>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-[#64f]"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex mobileMenu flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-xl text-gray-200 rounded md:bg-transparent md:p-0 md:dark:text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-xl hover:bg-[#f43f5e] text-gray-200 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-200 hover:bg-[#f43f5e] text-xl rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Services</a
+              >
+            </li>
+            <li>
+              <button
+                type="button"
+                class="text-white bg-[#f43f5e] ease-in md:hidden duration-300 hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Log in
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- content -->
+    <section class="content max-[1500px]:max-w-4xl">
+      <div
+        class="container2 grid grid-cols-2 max-[1500px]:mx-auto items-center text-left justify-center text-left max-[600px]:grid-cols-1 max-[600px]:text-center"
+      >
+        <div class="max-[600px]:p-5">
+          <h1
+            class="text-white max-w-2xl max-[1500px]:text-3xl text-5xl max-[600px]:text-lg max-[600px]:mt-[150px]"
+          >
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Reprehenderit, eaque.
+          </h1>
+          <p
+            class="text-white max-w-2xl max-[1500px]:text-sm md:pt-5 md:px-1 text-xl max-[600px]:text-sm"
+          >
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Dignissimos, quia. Ab ipsam numquam soluta vitae deleniti inventore
+          </p>
+          <i
+            id="exitbtn"
+            class="fa-solid fa-minus fa-2xl"
+            style="color: #ffffff"
+          ></i>
+        </div>
+        <div
+          class="max-[1500px]:w-[350px] max-[1500px]:pt-10 max-[600px]:w-[200px] max-[600px]:flex max-[600px]:m-auto"
+        >
+          <img
+            src="undraw_social_influencer_re_beim.svg"
+            alt=""
+            class="xl:max-w-[500px] md:max-h-[300px]"
+          />
+        </div>
+        <div>
+          <div class="form-element">
+            <h1
+              class="text-white text-xl pb-3 text-left max-[600px]:text-center"
+            >
+              Twitch Live Streams
+            </h1>
+            <input
+              type="text"
+              class="bg-indigo-200 mb-2"
+              id="username-input"
+              placeholder="jahrein"
+            />
+            <button type="submit" id="check-button">Connect</button>
+          </div>
+          <form id="streamer-form" class="str-form">
+            <div class="streams"></div>
+            <div class="user-container"></div>
+            <div id="chat"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="write max-[600px]:mt-[100px]">
+        <div class="typewriter">
+          <p class="line-1 anim-typewriter max-[600px]:text-2xl">
+            BE RICH WITH ME!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- vaves icon -->
+    <div class="icon max-[600px]:hidden">
+      <i class="fa-solid fa-user"> 178</i>
+      <i class="fa-solid fa-user"> 859</i>
+      <i class="fa-solid fa-user"> 1.043</i>
+      <i class="fa-solid fa-user"> 37.654</i>
+      <i class="fa-solid fa-user"> 74</i>
+      <i class="fa-solid fa-user"> 29</i>
+      <i class="fa-solid fa-user"> 554</i>
+      <i class="fa-solid fa-user"> 4.055</i>
+      <i class="fa-solid fa-user"> 6.003</i>
+    </div>
+    <div class="ocean max-[600px]:hidden">
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+
+    <!-- Card -->
+    <section class="card lg:p-20">
+      <div class="main-container">
+        <p class="text-white text-8xl max-[600px]:px-5 max-[600px]:text-2xl">
+          Select Platform
+        </p>
+        <div class="flex p-5 gap-30 max-[600px]:p-0">
+          <ul>
+            <li>
+              <div
+                class="flex items-center mr-4 max-[600px]:mr-0 max-[600px]:p-5"
+              >
+                <input
+                  id="purple-checkbox"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                  onclick="toggleCheck('purple-checkbox', 'teal-checkbox')"
+                />
+                <label
+                  for="purple-checkbox"
+                  class="ml-2 text-xl p-3 font-medium text-white dark:text-gray-300 max-[600px]:text-[12px] max-[600px]:p-0"
+                  >Twitch Services</label
+                >
+              </div>
+            </li>
+            <li>
+              <div class="flex items-center mr-4">
+                <input
+                  id="teal-checkbox"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-teal-600 bg-gray-100 border-gray-300 rounded focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                  onclick="toggleCheck('teal-checkbox', 'purple-checkbox')"
+                />
+                <label
+                  for="teal-checkbox"
+                  class="ml-2 text-xl p-3 font-medium text-white dark:text-gray-300 max-[600px]:text-[12px] max-[600px]:p-0"
+                  >Kick Services</label
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="flex2">
+          <div class="button2div max-[600px]:gap-5 max-[600px]:px-5">
+            <ul>
+              <li>
+                <p
+                  class="text-white text-6xl max-[600px]:text-2xl max-[600px]:px-5"
+                >
+                  Filters
+                </p>
+              </li>
+              <li>
+                <button id="weekly" class="text-white">Weekly</button>
+              </li>
+              <li>
+                <button id="monthly" class="text-white">Monthly</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-card max-[600px]:p-10 max-[600px]:justify-center">
+        <div id="twitch" class="max-w-xl card1 h-96 bg-white">
+          <h1 class="text-white">Twitch</h1>
+          <ul class="max-[600px]:p-5">
+            <li class="text-3xl">Basic</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <div class="price pt-3 flex flex-row text-center justify-center">
+              <p class="text-2xl text-white pt-3 defaultPrice">
+                $120/<span class="text-[#14b908]">Weekly</span>
+              </p>
+              <span class="priceBasic"></span>
+
+              <!-- <del class="text-red-500 text-sm">99$</del> -->
+            </div>
+            <button class="chooseBtn mt-5">Choose Plan</button>
+          </ul>
+        </div>
+        <div id="twitch" class="max-w-sm card2 h-96 bg-white">
+          <h1 class="text-white">Twitch</h1>
+
+          <ul class="max-[600px]:p-5">
+            <li class="text-3xl">Standart</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <div class="price pt-3 flex flex-row text-center justify-center">
+              <p class="text-2xl text-white pt-3 defaultPrice">
+                $160/<span class="text-[#14b908]">Weekly</span>
+              </p>
+              <span class="priceStandart"></span>
+            </div>
+            <button class="chooseBtn mt-5">Choose Plan</button>
+          </ul>
+        </div>
+        <div id="twitch" class="max-w-sm card3 h-96 bg-white">
+          <h1 class="text-white">Twitch</h1>
+
+          <ul class="max-[600px]:p-5">
+            <li class="text-3xl">Premium</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <div class="price pt-3 flex flex-row text-center justify-center">
+              <p class="text-2xl text-white pt-3 defaultPrice">
+                $250/<span class="text-[#14b908]">Weekly</span>
+              </p>
+              <span class="pricePremium"></span>
+            </div>
+            <button class="chooseBtn mt-5">Choose Plan</button>
+          </ul>
+        </div>
+
+        <div id="kick" class="max-w-sm card3 h-96 bg-white">
+          <h1 class="text-white">Kick</h1>
+
+          <ul class="max-[600px]:p-5">
+            <li class="text-3xl">Basic</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <div class="price pt-3 flex flex-row text-center justify-center">
+              <p class="text-2xl text-white pt-3 defaultPrice">
+                $140/<span class="text-[#14b908]">Weekly</span>
+              </p>
+              <span class="kickPriceBasic"></span>
+            </div>
+            <button class="chooseBtn mt-5">Choose Plan</button>
+          </ul>
+        </div>
+        <div id="kick" class="max-w-sm card3 h-96 bg-white">
+          <h1 class="text-white">Kick</h1>
+
+          <ul class="max-[600px]:p-5">
+            <li class="text-3xl">Standart</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <div class="price pt-3 flex flex-row text-center justify-center">
+              <p class="text-2xl text-white pt-3 defaultPrice">
+                $170/<span class="text-[#14b908]">Weekly</span>
+              </p>
+              <span class="kickPriceStandart"></span>
+            </div>
+            <button class="chooseBtn mt-5">Choose Plan</button>
+          </ul>
+        </div>
+        <div id="kick" class="max-w-sm card3 h-96 bg-white">
+          <h1 class="text-white">Kick</h1>
+
+          <ul class="max-[600px]:p-5">
+            <li class="text-3xl">Premium</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <div class="price pt-3 flex flex-row text-center justify-center">
+              <p class="text-2xl text-white pt-3 defaultPrice">
+                $350/<span class="text-[#14b908]">Weekly</span>
+              </p>
+              <span class="kickPricePremium"></span>
+            </div>
+            <button class="chooseBtn mt-5">Choose Plan</button>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ourviewbot -->
+    <section
+      class="ourviewbot items-center p-20 justify-center max-w-full mx-auto max-h-full max-[600px]:max-h-[153rem] max-[600px]:p-10"
+    >
+      <h1
+        class="text-center lg:p-5 lg:text-4xl md:text-3xl xl:text-5xl text-[#fae8ff] max-[600px]:text-xl"
+      >
+        Our viewbot was made just for you
+      </h1>
+      <div class="max-w-5xl mx-auto lg:space-x-10">
+        <div
+          class="xl:grid xl:gap-10 md:grid md:grid-cols-2 md:gap-0 md:p-0 xl:grid-cols-3 lg:grid lg:grid-cols-2 m-0 lg:p-5 items-center justify-center"
+        >
+          <div>
+            <img src="undraw.svg" alt="" />
+            <h3 class="text-purple-300 mx-auto text-center justify-center">
+              Instant Results
+            </h3>
+            <p
+              class="text-white text-center max-w-sm item-center mx-auto justify-center max-[600px]:text-[13px] max-[600px]:max-w-[15rem]"
+            >
+              You will start seeing results immediately.Buy our service today
+              and get the views you need to grow your kick or twitch channel!
+            </p>
+          </div>
+          <div>
+            <img src="undraw.svg" alt="" />
+            <h3 class="text-purple-300 mx-auto text-center justify-center">
+              Instant Results
+            </h3>
+            <p
+              class="text-white text-center max-w-sm item-center mx-auto justify-center max-[600px]:text-[13px] max-[600px]:max-w-[15rem]"
+            >
+              You will start seeing results immediately.Buy our service today
+              and get the views you need to grow your kick or twitch channel!
+            </p>
+          </div>
+          <div>
+            <img src="undraw.svg" alt="" />
+            <h3 class="text-purple-300 mx-auto text-center justify-center">
+              Instant Results
+            </h3>
+            <p
+              class="text-white text-center max-w-sm item-center mx-auto justify-center max-[600px]:text-[13px] max-[600px]:max-w-[15rem]"
+            >
+              You will start seeing results immediately.Buy our service today
+              and get the views you need to grow your kick or twitch channel!
+            </p>
+          </div>
+          <div>
+            <img src="undraw.svg" alt="" />
+            <h3 class="text-purple-300 mx-auto text-center justify-center">
+              Instant Results
+            </h3>
+            <p
+              class="text-white text-center max-w-sm item-center mx-auto justify-center max-[600px]:text-[13px] max-[600px]:max-w-[15rem]"
+            >
+              You will start seeing results immediately.Buy our service today
+              and get the views you need to grow your kick or twitch channel!
+            </p>
+          </div>
+          <div>
+            <img src="undraw.svg" alt="" />
+            <h3 class="text-purple-300 mx-auto text-center justify-center">
+              Instant Results
+            </h3>
+            <p
+              class="text-white max-w-sm item-center mx-auto justify-center text-center max-[600px]:text-[13px] max-[600px]:max-w-[15rem]"
+            >
+              You will start seeing results immediately.Buy our service today
+              and get the views you need to grow your kick or twitch channel!
+            </p>
+          </div>
+          <div>
+            <img src="undraw.svg" alt="" />
+            <h3 class="text-purple-300 mx-auto text-center justify-center">
+              Instant Results
+            </h3>
+            <p
+              class="text-white max-w-sm text-center item-center mx-auto justify-center max-[600px]:text-[13px] max-[600px]:max-w-[15rem]"
+            >
+              You will start seeing results immediately.Buy our service today
+              and get the views you need to grow your kick or twitch channel!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions -->
+    <section>
+      <div>
+        <div class="">
+          <div
+            class="mx-auto text-center px-4 mt-12 text-5xl text-[#fae8ff] font-semibold max-h-full max-[600px]:text-2xl"
+          >
+            Frequently Asked Questions
+          </div>
+          <dl
+            class="mt-8 mx-auto max-w-screen-sm lg:max-w-screen-lg flex flex-col lg:flex-row lg:flex-wrap"
+          >
+            <div class="lg:w-1/2">
+              <div
+                class="question-and-answer select-none cursor-pointer border-2 mx-8 my-3 px-6 py-4 rounded-lg text-sm group"
+              >
+                <dt class="question">
+                  <div class="flex justify-between">
+                    <div class="text-[#5eead4] font-semibold">
+                      Do you accept Paypal?
+                    </div>
+                    <div>
+                      <svg
+                        fill="currentColor"
+                        class="question-chevron group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1"
+                        viewBox="0 0 20 20"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <g
+                          stroke="currentColor"
+                          stroke-width="1"
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="9.29289322 12.9497475 10 13.6568542 15.6568542 8 14.2426407 6.58578644 10 10.8284271 5.75735931 6.58578644 4.34314575 8"
+                            ></polygon>
+                          </g>
+                        </g>
+                      </svg>
+                      <svg
+                        fill="currentColor"
+                        class="question-chevron hidden group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1"
+                        viewBox="0 0 20 20"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <g
+                          stroke="currentColor"
+                          stroke-width="1"
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="10.7071068 7.05025253 10 6.34314575 4.34314575 12 5.75735931 13.4142136 10 9.17157288 14.2426407 13.4142136 15.6568542 12"
+                            ></polygon>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </dt>
+                <dd class="answer hidden mt-2 leading-snug text-[#0f766e]">
+                  Yes, we do, along with AliPay, PayTM, and Payoneer.
+                </dd>
+              </div>
+            </div>
+            <div class="lg:w-1/2">
+              <div
+                class="question-and-answer select-none cursor-pointer border-2 mx-8 my-3 px-6 py-4 rounded-lg text-sm group"
+              >
+                <dt class="question">
+                  <div class="flex justify-between">
+                    <div class="text-[#5eead4] font-semibold">
+                      What is your SLA Guarantee ?
+                    </div>
+                    <div>
+                      <svg
+                        fill="currentColor"
+                        class="question-chevron group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1"
+                        viewBox="0 0 20 20"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <g
+                          stroke="currentColor"
+                          stroke-width="1"
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="9.29289322 12.9497475 10 13.6568542 15.6568542 8 14.2426407 6.58578644 10 10.8284271 5.75735931 6.58578644 4.34314575 8"
+                            ></polygon>
+                          </g>
+                        </g>
+                      </svg>
+                      <svg
+                        fill="currentColor"
+                        class="question-chevron hidden group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1"
+                        viewBox="0 0 20 20"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <g
+                          stroke="currentColor"
+                          stroke-width="1"
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="10.7071068 7.05025253 10 6.34314575 4.34314575 12 5.75735931 13.4142136 10 9.17157288 14.2426407 13.4142136 15.6568542 12"
+                            ></polygon>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </dt>
+                <dd class="answer hidden mt-2 leading-snug text-[#0f766e]">
+                  Yes, we do, along with AliPay, PayTM, and Payoneer.
+                </dd>
+              </div>
+            </div>
+            <div class="lg:w-1/2">
+              <div
+                class="question-and-answer select-none cursor-pointer border-2 mx-8 my-3 px-6 py-4 rounded-lg text-sm group"
+              >
+                <dt class="question">
+                  <div class="flex justify-between">
+                    <div class="text-[#5eead4] font-semibold">
+                      Why should I choose you?
+                    </div>
+                    <div>
+                      <svg
+                        fill="currentColor"
+                        class="question-chevron group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1"
+                        viewBox="0 0 20 20"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <g
+                          stroke="currentColor"
+                          stroke-width="1"
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="9.29289322 12.9497475 10 13.6568542 15.6568542 8 14.2426407 6.58578644 10 10.8284271 5.75735931 6.58578644 4.34314575 8"
+                            ></polygon>
+                          </g>
+                        </g>
+                      </svg>
+                      <svg
+                        fill="currentColor"
+                        class="question-chevron hidden group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1"
+                        viewBox="0 0 20 20"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <g
+                          stroke="currentColor"
+                          stroke-width="1"
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="10.7071068 7.05025253 10 6.34314575 4.34314575 12 5.75735931 13.4142136 10 9.17157288 14.2426407 13.4142136 15.6568542 12"
+                            ></polygon>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </dt>
+                <dd class="answer hidden mt-2 leading-snug text-[#0f766e]">
+                  Yes, we do, along with AliPay, PayTM, and Payoneer.
+                </dd>
+              </div>
+            </div>
+            <div class="lg:w-1/2">
+              <div
+                class="question-and-answer select-none cursor-pointer border-2 mx-8 my-3 px-6 py-4 rounded-lg text-sm group"
+              >
+                <dt class="question">
+                  <div class="flex justify-between">
+                    <div class="text-[#5eead4] font-semibold">
+                      Do you accept Crypto Method?
+                    </div>
+                    <div>
+                      <svg
+                        fill="currentColor"
+                        class="question-chevron group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1"
+                        viewBox="0 0 20 20"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <g
+                          stroke="currentColor"
+                          stroke-width="1"
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="9.29289322 12.9497475 10 13.6568542 15.6568542 8 14.2426407 6.58578644 10 10.8284271 5.75735931 6.58578644 4.34314575 8"
+                            ></polygon>
+                          </g>
+                        </g>
+                      </svg>
+                      <svg
+                        fill="currentColor"
+                        class="question-chevron hidden group-hover:bg-gray-500 h-5 block text-indigo-800 bg-gray-400 rounded-full p-1"
+                        viewBox="0 0 20 20"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <g
+                          stroke="currentColor"
+                          stroke-width="1"
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                        >
+                          <g>
+                            <polygon
+                              points="10.7071068 7.05025253 10 6.34314575 4.34314575 12 5.75735931 13.4142136 10 9.17157288 14.2426407 13.4142136 15.6568542 12"
+                            ></polygon>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </dt>
+                <dd class="answer hidden mt-2 leading-snug text-[#0f766e]">
+                  Yes, we do, along with AliPay, PayTM, and Payoneer.
+                </dd>
+              </div>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimonial -->
+    <section class="testimonial-section">
+      <div class="pt-20">
+        <h1 class="text-[#fae8ff] text-6xl text-center max-[600px]:text-2xl">
+          What our clients say
+        </h1>
+      </div>
+      <div class="testimonial-container">
+        <div class="progress-bar"></div>
+        <div class="fas fa-quote-left fa-quote"></div>
+        <div class="fas fa-quote-right fa-quote"></div>
+        <p class="testimonial">
+          Since applying the Coppercoat system I have been delighted with its
+          performance. There's been much less weed build-up than in previous
+          years, and what did appear has been easy to remove. It’s quite a high
+          initial outlay, but a lot of money will be saved over the years and it
+          seems to work as a very effective anti-fouling with the bonus of
+          offering good hull protection.
+        </p>
+        <div class="user">
+          <img
+            src="https://randomuser.me/api/portraits/women/45.jpg"
+            alt="user"
+            class="user-image"
+          />
+          <div class="user-details">
+            <h4 class="username">Mia Asano</h4>
+            <p class="role">Sales</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer class="dark:bg-gray-900">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-center md:gap-20">
+          <div class="mb-6 md:mb-0">
+            <a href="" class="flex items-center">
+              <img src="twitchlogo.jpg" class="h-8 mr-3" alt="FlowBite Logo" />
+              <span
+                class="self-center text-2xl text-white font-semibold whitespace-nowrap dark:text-white"
+                >Twitch</span
+              >
+            </a>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-white uppercase dark:text-white"
+              >
+                Resources
+              </h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="https://flowbite.com/" class="hover:underline"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >About</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-white uppercase dark:text-white"
+              >
+                Follow us
+              </h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a
+                    href="https://github.com/themesberg/flowbite"
+                    class="hover:underline"
+                    >Github</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://discord.gg/4eeurUVvTy"
+                    class="hover:underline"
+                    >Discord</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-white uppercase dark:text-white"
+              >
+                Legal
+              </h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <div class="sm:flex sm:items-center sm:justify-center">
+          <div class="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
+            <a
+              href="#"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <svg
+                class="w-4 h-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 8 19"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="sr-only">Facebook page</span>
+            </a>
+            <a
+              href="#"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <svg
+                class="w-4 h-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 21 16"
+              >
+                <path
+                  d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"
+                />
+              </svg>
+              <span class="sr-only">Discord community</span>
+            </a>
+            <a
+              href="#"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <svg
+                class="w-4 h-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 17"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="sr-only">Twitter page</span>
+            </a>
+            <a
+              href="#"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <svg
+                class="w-4 h-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="sr-only">GitHub account</span>
+            </a>
+            <a
+              href="#"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <svg
+                class="w-4 h-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="sr-only">Dribbble account</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".question-and-answer").click(function () {
+        $(this).find(".answer").toggleClass("hidden");
+        $(this).find(".question-chevron").toggleClass("hidden");
+      });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      const formelement = document.querySelector(".form-element");
+      const checkbtn = document.getElementById("check-button");
+      const exitbtn = document.getElementById("exitbtn");
+      const streamsForm = document.querySelector(".str-form");
+      const streamContainer = document.querySelector(".streams");
+      const chat = document.getElementById("chat");
+      const writer = document.querySelector(".write");
+      checkbtn.addEventListener("click", function () {
+        formelement.style.display = "none";
+        streamContainer.style.backgroundColor = "#0c0c1a";
+        streamContainer.style.borderRadius = "30px";
+        streamsForm.style.zIndex = "99999999";
+        exitbtn.style.visibility = "visible";
+        streamContainer.style.display = "block";
+        chat.style.display = "block";
+        chat.style.background = "#0c0c1a";
+        writer.style.left = "35%";
+        writer.style.top = "65%";
+      });
+
+      exitbtn.addEventListener("click", function () {
+        streamContainer.style.display = "none";
+        chat.style.display = "none";
+        streamsForm.style.zIndex = "-99999999";
+        formelement.style.display = "block";
+        exitbtn.style.visibility = "hidden";
+        location.reload();
+      });
+
+      function toggleCheck(clickedCheckboxId, otherCheckboxId) {
+        const clickedCheckbox = document.getElementById(clickedCheckboxId);
+        const otherCheckbox = document.getElementById(otherCheckboxId);
+
+        if (clickedCheckbox.checked) {
+          otherCheckbox.checked = false;
+        }
+      }
+      const mobileExit = document.querySelector(".mobileexit");
+      const mobileMenu = document.querySelector(".mobileMenu");
+
+      mobileExit.addEventListener("click", function (event) {
+        event.stopPropagation(); // Bu satırı ekleyin
+        mobileMenu.style.display = "none";
+      });
+    </script>
+    <script>
+      const usrInput = document.getElementById("username-input");
+
+      const ws = new WebSocket("wss://irc-ws.chat.twitch.tv:443");
+
+      ws.onopen = function () {
+        console.log("Connected to the WebSocket");
+        ws.send("CAP REQ:twitch.tv/tags/twitch.tv/commands");
+        ws.send("PASS oauth:2bv623s3uzrzlbr05em2s84p3aiq8t");
+        ws.send("NICK mertsolgun2");
+      };
+
+      const joinButton = document.getElementById("check-button");
+      joinButton.addEventListener("click", function () {
+        const usrInput = document.getElementById("username-input").value;
+        if (usrInput) {
+          ws.send("JOIN #" + usrInput);
+        }
+      });
+
+      ws.onmessage = function (event) {
+        if (event.data.includes("PRIVMSG")) {
+          const messageContent = event.data.split(" :").slice(-1)[0];
+
+          const chatDiv = document.getElementById("chat");
+          chatDiv.innerHTML += `<p>${messageContent}</p>`;
+        }
+      };
+
+      ws.onerror = function (error) {
+        console.log("WebSocket Error: ", error);
+      };
+
+      ws.onclose = function () {
+        console.log("WebSocket connection closed");
+      };
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
